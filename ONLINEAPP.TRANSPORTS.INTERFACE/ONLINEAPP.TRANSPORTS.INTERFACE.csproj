@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CDE4A285-F357-4B79-B3D1-38E7CA8C069F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ONLINEAPP.TRANSPORTS.INTERFACE</RootNamespace>
+    <AssemblyName>ONLINEAPP.TRANSPORTS.INTERFACE</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ICommon.cs" />
+    <Compile Include="IEvents.cs" />
+    <Compile Include="IMVDealer.cs" />
+    <Compile Include="INews.cs" />
+    <Compile Include="IRegistrationRule.cs" />
+    <Compile Include="IReservedMark.cs" />
+    <Compile Include="ITransport.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ONLINEAPP.DAL\ONLINEAPP.DAL.csproj">
+      <Project>{52e201d6-a7ba-4650-8a9f-a39dd44da576}</Project>
+      <Name>ONLINEAPP.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ONLINEAPP.MODEL\ONLINEAPP.MODEL.csproj">
+      <Project>{7c93704c-b5a9-46f3-a328-15b878223e82}</Project>
+      <Name>ONLINEAPP.MODEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ONLINEAPP.TRANSPORTS.MODEL\ONLINEAPP.TRANSPORTS.MODEL.csproj">
+      <Project>{6cbe5a00-f167-47c0-a381-0bb695185e33}</Project>
+      <Name>ONLINEAPP.TRANSPORTS.MODEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ONLINEAPP.TRANSPORTS.VIEWMODEL\ONLINEAPP.TRANSPORTS.VIEWMODEL.csproj">
+      <Project>{9353ed14-2470-4cf4-b15e-f6debf13bf8d}</Project>
+      <Name>ONLINEAPP.TRANSPORTS.VIEWMODEL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
