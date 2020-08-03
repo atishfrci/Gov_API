@@ -121,6 +121,5 @@ namespace ONLINEAPP.API.Controllers.Generic
 
         #endregion
 
-
     }
 }
