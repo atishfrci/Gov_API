@@ -52,5 +52,30 @@ namespace ONLINEAPP.GENERIC.BL.Operations
 
         }
 
+
+        public AdminDetails GetAdminDetails(string token)
+        {
+            AdminDetails adminDetails = new AdminDetails()
+            {
+                UserName = null,
+                Password = null
+            };
+
+            try
+            {
+                if (!string.IsNullOrEmpty(Variables.NAFUserName) && !string.IsNullOrEmpty(Variables.NAFPassword))
+                {
+                    adminDetails.UserName = Variables.NAFUserName;
+                    adminDetails.Password = Variables.NAFPassword;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return adminDetails;
+
+        }
     }
 }

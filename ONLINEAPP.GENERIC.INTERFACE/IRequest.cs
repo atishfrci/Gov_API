@@ -11,13 +11,21 @@ namespace ONLINEAPP.GENERIC.INTERFACE
 {
     public interface IRequest
     {
+        #region Generic
+
         List<Request> GetAllRequests(string token, string subSiteName, string listName, string userName);
 
         string BuildRestUrl(string subSiteName, string listName, string filter, string userName = null);
 
+        #endregion
+
+        #region Transport
+
         Result CancelTransportRequest(TransportList objUpdateRequest, string siteUrl, string listName, string token);
 
         TransportList GetTransport(string requestId, string token);
+
+        #endregion
 
     }
 }

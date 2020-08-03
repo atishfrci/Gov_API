@@ -119,6 +119,21 @@ namespace ONLINEAPP.API.Controllers.Generic
         #endregion
 
 
+        #region NAF
+
+        /// <summary>
+        /// Getting NAF Admin Credentials
+        /// </summary>
+        /// <returns>AdminDetails</returns>
+        [Authorize]
+        [HttpGet]
+        public IHttpActionResult GetNAFAdminCredentials()
+        {
+            return Ok(_eServiceOperations.GetAdminDetails(token));
+        }
+
+        #endregion
+
         #endregion
 
     }

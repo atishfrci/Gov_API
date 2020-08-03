@@ -14,5 +14,7 @@ namespace ONLINEAPP.GENERIC.INTERFACE
 
         string BuildRestUrl();
 
+        AdminDetails GetAdminDetails(string token);
+
     }
 }

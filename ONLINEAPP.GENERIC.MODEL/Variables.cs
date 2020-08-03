@@ -23,7 +23,20 @@ namespace ONLINEAPP.GENERIC.MODEL
 
         #endregion
 
+
+        #region Urls
+
         public static string EServiceUrl = WebConfigurationManager.AppSettings["EServiceUrl"];
+
+        #endregion
+
+
+        #region Credentials
+
+        public static string NAFUserName = WebConfigurationManager.AppSettings["NAFUserName"];
+        public static string NAFPassword = WebConfigurationManager.AppSettings["NAFPassword"];
+
+        #endregion
 
 
         #region Filters
