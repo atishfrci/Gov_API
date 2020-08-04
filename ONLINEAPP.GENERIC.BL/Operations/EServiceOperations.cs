@@ -68,7 +68,11 @@ namespace ONLINEAPP.GENERIC.BL.Operations
                         adminDetails.UserName = Variables.NAFUserName;
                         adminDetails.Password = Variables.NAFPassword;
                     }
-                }                
+                }
+                else
+                {
+                    throw new UnauthorizedAccessException();
+                }
             }
             catch (Exception ex)
             {
