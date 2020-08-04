@@ -55,19 +55,20 @@ namespace ONLINEAPP.GENERIC.BL.Operations
 
         public AdminDetails GetAdminDetails(string token)
         {
-            AdminDetails adminDetails = new AdminDetails()
-            {
-                UserName = null,
-                Password = null
-            };
-
+            AdminDetails adminDetails = new AdminDetails();
+            adminDetails.UserName = null;
+            adminDetails.Password = null;
+            
             try
             {
-                if (!string.IsNullOrEmpty(Variables.NAFUserName) && !string.IsNullOrEmpty(Variables.NAFPassword))
+                if (!string.IsNullOrEmpty(token))
                 {
-                    adminDetails.UserName = Variables.NAFUserName;
-                    adminDetails.Password = Variables.NAFPassword;
-                }
+                    if (!string.IsNullOrEmpty(Variables.NAFUserName) && !string.IsNullOrEmpty(Variables.NAFPassword))
+                    {
+                        adminDetails.UserName = Variables.NAFUserName;
+                        adminDetails.Password = Variables.NAFPassword;
+                    }
+                }                
             }
             catch (Exception ex)
             {
@@ -77,5 +78,6 @@ namespace ONLINEAPP.GENERIC.BL.Operations
             return adminDetails;
 
         }
+
     }
 }
