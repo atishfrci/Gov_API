@@ -99,7 +99,7 @@ namespace ONLINEAPP.TRANSPORTS.BL.Operations
             {
                 if (charOption1Rule4.Count() == count)
                 {
-                    foreach (string _char in charOption2Rule4)
+                    foreach (string _char in charOptionGeneral)
                     {
                         if (_char1 == "Z" && _char == "Z")
                         {

@@ -20,5 +20,12 @@ namespace ONLINEAPP.GENERIC.MODEL
 
         [JsonProperty("Status")]
         public string Status { get; set; }
+
+        [JsonProperty("EServiceName")]
+        public string EServiceName { get; set; }
+
+        [JsonProperty("EServicePublicFormUrl")]
+        public string EServicePublicFormUrl { get; set; }
+
     }
 }

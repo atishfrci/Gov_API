@@ -66,9 +66,9 @@ namespace ONLINEAPP.API.Controllers.Generic
         /// <returns></returns>
         [Authorize]
         [HttpGet]
-        public IHttpActionResult GetAllRequests(string sub, string lst, string usr)
+        public IHttpActionResult GetAllRequests(string usr)
         {
-            return Ok(_requestOperations.GetAllRequests(token, sub, lst, usr));
+            return Ok(_requestOperations.GetAllRequests(token, usr));
         }
 
 

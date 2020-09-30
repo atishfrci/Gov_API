@@ -13,7 +13,9 @@ namespace ONLINEAPP.GENERIC.INTERFACE
     {
         #region Generic
 
-        List<Request> GetAllRequests(string token, string subSiteName, string listName, string userName);
+        //commented by atish before naf to make single call in workspace
+        //List<Request> GetAllRequests(string token, string subSiteName, string listName, string userName);
+        List<Request> GetAllRequests(string token, string userName);
 
         string BuildRestUrl(string subSiteName, string listName, string filter, string userName = null);
 
