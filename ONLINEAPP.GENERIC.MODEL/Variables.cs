@@ -41,7 +41,7 @@ namespace ONLINEAPP.GENERIC.MODEL
 
         #region Filters
 
-        public const string EServiceFilter = "/items?$select=EServiceName,EServiceUrl,EServiceListName,EServicePublicFormUrl";
+        public const string EServiceFilter = "/items?$select=EServiceName,EServiceUrl,EServiceListName,EServicePublicFormUrl,TableName,NewBackend";
         public const string RequestFilter = "/items?$select=SID,GenericId,Created,Status";
         public const string SelectAllFilter = "/items?$select=*";
         #endregion

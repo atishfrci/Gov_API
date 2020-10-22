@@ -124,7 +124,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BAL.AHEAD.API\ONLINEAPP.API.csproj">
+    <ProjectReference Include="..\ONLINEAPP.API\ONLINEAPP.API.csproj">
       <Project>{622B7828-DB81-4443-AADC-198751F3C973}</Project>
       <Name>ONLINEAPP.API</Name>
     </ProjectReference>

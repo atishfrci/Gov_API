@@ -21,28 +21,28 @@ namespace ONLINEAPP.API.Controllers.Transport
 
         string token = Convert.ToString(HttpContext.Current.Request.Headers["Authorization"]);
 
-        [Authorize]
+        /*[Authorize]*/
         [HttpGet]
         public IHttpActionResult Get()
         {
             return Ok(objTransportOperations.GetTransport(Constants.TransportSiteUrl, token));
         }
 
-        [Authorize]
+        /*[Authorize]*/
         [HttpGet]
         public IHttpActionResult TransportByID(string id)
         {
             return Ok(objTransportOperations.TransportByID(id, Constants.TransportSiteUrl, token));
         }
 
-        [Authorize]
+       /* [Authorize]*/
         [HttpGet]
         public IHttpActionResult TransportByRegistrationMark(string RegistrationMark)
         {
             return Ok(objTransportOperations.TransportByRegistrationMark(RegistrationMark, Constants.TransportSiteUrl, token));
         }
 
-        [Authorize]
+        /*[Authorize]*/
         [HttpGet]
         public IHttpActionResult TransportByRegistrationMarkByStatus(string RegistrationMark)
         {
@@ -50,28 +50,28 @@ namespace ONLINEAPP.API.Controllers.Transport
 
         }
 
-        [Authorize]
+        /*[Authorize]*/
         [HttpGet]
         public IHttpActionResult IsRegistrationAvailable(string RegistrationMark, string Category, string Id)
         {
             return Ok(objTransportOperations.RegistrationAvailability(RegistrationMark, Constants.TransportSiteUrl, token, Category, Id));
         }
 
-        [Authorize]
+        /*[Authorize]*/
         [HttpGet]
         public IHttpActionResult TransportByStatus(string Status)
         {
             return Ok(objTransportOperations.TransportByStatus(Status, Constants.TransportSiteUrl, token));
         }
 
-        [Authorize]
+        /*[Authorize]*/
         [HttpGet]
         public IHttpActionResult TransportCountByStatus(string Status)
         {
             return Ok(objTransportOperations.TransportCountByStatus(Status, Constants.TransportSiteUrl, token));
         }
 
-        [Authorize]
+        /*[Authorize]*/
         [HttpGet]
         public IHttpActionResult Search(string Prefix, string FromNumber, string ToNumber)
         {
@@ -86,21 +86,21 @@ namespace ONLINEAPP.API.Controllers.Transport
         //    return Ok(objTransportOperations.ValidateRegistrationNo(Status));
         //}
 
-        [Authorize]
+        /*[Authorize]*/
         [HttpPost]
         public IHttpActionResult Post(ONLINEAPP.TRANSPORTS.MODEL.TransportList ObjTransport)
         {
             return Ok(objTransportOperations.AddTransport(ObjTransport, Constants.TransportSiteUrl, token));
         }
 
-        [Authorize]
+        /*[Authorize]*/
         [HttpPost]
         public IHttpActionResult UpdateTransportByID(ONLINEAPP.TRANSPORTS.MODEL.TransportList ObjTransport)
         {
             return Ok(objTransportOperations.UpdateTransportByID(ObjTransport, Constants.TransportSiteUrl, token));
         }
 
-        [Authorize]
+        /*[Authorize]*/
         [HttpPost]
         public IHttpActionResult DeleteTransportByID(string id)
         {
@@ -108,7 +108,7 @@ namespace ONLINEAPP.API.Controllers.Transport
         }
 
 
-        [Authorize]
+        /*[Authorize]*/
         [HttpGet]
         public IHttpActionResult IsMVDCodeValid(string mvdCode)
         {

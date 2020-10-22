@@ -68,6 +68,7 @@ namespace ONLINEAPP.API.Controllers.Generic
         [HttpGet]
         public IHttpActionResult GetAllRequests(string usr)
         {
+           // usr = "Tester";
             return Ok(_requestOperations.GetAllRequests(token, usr));
         }
 

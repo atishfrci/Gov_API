@@ -20,5 +20,11 @@ namespace ONLINEAPP.GENERIC.MODEL
 
         [JsonProperty("EServiceUrl")]
         public string EServiceUrl { get; set; }
+
+        [JsonProperty("TableName")]
+        public string EServiceTableName { get; set; }
+
+        [JsonProperty("NewBackend")]
+        public string EServiceNewBackEnd { get; set; }
     }
 }

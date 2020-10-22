@@ -21,6 +21,8 @@ namespace ONLINEAPP.GENERIC.BL.Operations
         public List<Request> GetAllRequests(string token, string userName)
         {
             List<Request> lstAllRequest = new List<Request>();
+            List<Request> requestDB = new List<Request>();
+            List<Request> requestWorkSpace = new List<Request>();
 
             try
             {
@@ -35,6 +37,7 @@ namespace ONLINEAPP.GENERIC.BL.Operations
                             && !string.IsNullOrEmpty(eservice.EServiceName)
                             && !string.IsNullOrEmpty(eservice.EServicePublicFormUrl)
                             && !string.IsNullOrEmpty(eservice.EServiceUrl)
+                            && string.IsNullOrEmpty(eservice.EServiceTableName)
                         )
                         {
                             string filterParam = string.Concat("&$filter=username eq '", userName, "'");
@@ -54,15 +57,44 @@ namespace ONLINEAPP.GENERIC.BL.Operations
                                         req.EServiceName = eservice.EServiceName;
                                         req.EServicePublicFormUrl = eservice.EServicePublicFormUrl;
 
-                                        lstAllRequest.Add(req);
+                                        requestWorkSpace.Add(req);
 
                                     }
                                 }
                             }
 
                         }
+
+                        if (!string.IsNullOrEmpty(eservice.EServiceTableName)
+                           && !string.IsNullOrEmpty(eservice.EServiceName)
+                           && !string.IsNullOrEmpty(eservice.EServicePublicFormUrl)
+                           && !string.IsNullOrEmpty(eservice.EServiceUrl)
+                           && !string.IsNullOrEmpty(eservice.EServiceNewBackEnd)
+                       ) {
+                            DBOperation dBOperation = new DBOperation();
+                            string[] tables = eservice.EServiceTableName.ToString().Split(',');
+
+                            foreach (var table in tables)
+                            {
+                                requestDB = dBOperation.GetAllRequestDB(token, userName, table);
+                                foreach (var request in requestDB)
+                                {
+                                    request.EServiceName = eservice.EServiceName;
+                                    request.EServiceName = eservice.EServiceName;
+                                    request.EServicePublicFormUrl = eservice.EServicePublicFormUrl;
+                                }
+
+                            }
+
+                            
+                        }
+
                     }
+
+
+                    lstAllRequest = requestWorkSpace.Concat(requestDB).ToList();
                 }
+               
 
             }
             catch (Exception ex)
