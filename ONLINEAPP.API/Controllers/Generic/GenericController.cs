@@ -73,6 +73,8 @@ namespace ONLINEAPP.API.Controllers.Generic
         }
 
 
+
+
         /// <summary>
         /// Getting specific request data from Transport EService
         /// based on request id
@@ -87,6 +89,20 @@ namespace ONLINEAPP.API.Controllers.Generic
         }
 
         #endregion
+        /// <summary>
+        /// Get id of request on frontend and eservice name and usr name to fetch fieldlist from front list to insert in db or sharepoint list
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="eserv"></param>
+        /// <param name="usr"></param>
+        /// <returns></returns>
+        //[Authorize]
+        [HttpGet]
+        public IHttpActionResult EserviceCentralOperation(string id, string eserv, string usr)
+        {
+            // usr = "Tester";
+            return Ok(_requestOperations.EserviceCentralOperation(token, id, eserv, usr));
+        }
 
 
         #region EService Transport Workspace Form

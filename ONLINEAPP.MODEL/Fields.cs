@@ -30,4 +30,13 @@ namespace ONLINEAPP.MODEL
         public const string Modified = "Modified";
         public const string Sequence = "Sequence";
     }
+
+    public class FieldsList
+    {
+       
+        public string Title { get; set; }
+        public string VisibleInListView { get; set; }
+        public string InternalName { get; set; }
+       
+    }
 }

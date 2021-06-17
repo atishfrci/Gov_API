@@ -26,5 +26,27 @@ namespace ONLINEAPP.GENERIC.MODEL
 
         [JsonProperty("NewBackend")]
         public string EServiceNewBackEnd { get; set; }
+
+        [JsonProperty("StatusList")]
+        public string EServiceStatusList { get; set; }
+
+        [JsonProperty("Subsite")]
+        public string EServiceSubsite { get; set; }
+
+        [JsonProperty("FieldsList")]
+        public string EServiceFieldsList { get; set; }
+
+        [JsonProperty("SQLOrSP")]
+        public string SQLOrSP { get; set; } = "SQL";
+
+        [JsonProperty("FrontEndSubsite")]
+        public string EServiceFrontEndSubsite { get; set; }
+
+        [JsonProperty("FrontEndList")]
+        public string EServiceFrontEndList { get; set; }
+
+        [JsonProperty("DBConnStrName")]
+        public string EServiceDBConnStrName { get; set; }
+
     }
 }

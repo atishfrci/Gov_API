@@ -15,6 +15,9 @@ namespace ONLINEAPP.GENERIC.INTERFACE
 
         //commented by atish before naf to make single call in workspace
         //List<Request> GetAllRequests(string token, string subSiteName, string listName, string userName);
+
+        string EserviceCentralOperation(string token, string id, string eserv, string usr);
+
         List<Request> GetAllRequests(string token, string userName);
 
         string BuildRestUrl(string subSiteName, string listName, string filter, string userName = null);

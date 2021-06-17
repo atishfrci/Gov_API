@@ -17,6 +17,40 @@ namespace ONLINEAPP.DAL
 {
     public class CRUDOperations
     {
+        public static JArray GetListByRestURL(string RestUrl, string token)
+        {
+            JArray jarr = new JArray();
+            try
+            {
+                if (!string.IsNullOrEmpty(token))
+                {
+                    //JObject jobj = RESTAPI.GetResponseFromEndPointRequestAccessToken(RestUrl, token.Split(' ')[1]);
+                    JObject jobj = RESTAPI.GetResponseFromEndPointRequest(RestUrl, System.Net.CredentialCache.DefaultCredentials);
+                    jarr = (JArray)jobj["d"]["results"];
+                    if (jarr.Count > 0)
+                    {
+                        return jarr;
+                    }
+                }
+                else
+                {
+                    JObject jobj = RESTAPI.GetResponseFromEndPointRequest(RestUrl, System.Net.CredentialCache.DefaultCredentials);
+                    jarr = (JArray)jobj["d"]["results"];
+                    if (jarr.Count > 0)
+                    {
+                        return jarr;
+                    }
+                }
+                return jarr;
+            }
+            catch (Exception ex)
+            {
+                string method = string.Concat(MethodBase.GetCurrentMethod().Name, " - Url - ", RestUrl);
+                string guid = WriteException(ex, method, MethodBase.GetCurrentMethod().DeclaringType.Name);
+                throw new Exception(string.Format(Messages.MsgExceptionOccured, guid));
+            }
+        }
+
         public static List<T> GetListByRestURL<T>(string RestUrl, string token)
         {
             List<T> lst = new List<T>();
