@@ -66,5 +66,9 @@ namespace ONLINEAPP.MODEL
         public const string MsgNewsUpdatedSuccessfully = "News updated successfully";
         public const string MsgNewsDeletedSuccessfully = "Selected News deleted successfully";
 
+        /*Email*/
+        public const string EmailSentSuccessfully = "Email Sent Successfully";
+        public const string EmailSentFailed = "Email not sent";
+
     }
 }

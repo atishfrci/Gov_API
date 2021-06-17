@@ -5,6 +5,8 @@ using ONLINEAPP.TRANSPORTS.BL.Operations;
 using ONLINEAPP.TRANSPORTS.INTERFACE;
 using ONLINEAPP.GENERIC.BL.Operations;
 using ONLINEAPP.GENERIC.INTERFACE;
+using ONLINEAPP.EMAIL.INTERFACE;
+using ONLINEAPP.EMAIL.BL.Operations;
 
 namespace ONLINEAPP.API
 {
@@ -26,6 +28,7 @@ namespace ONLINEAPP.API
             container.RegisterType<IEvents, EventOperations>();
             container.RegisterType<IEService, EServiceOperations>();
             container.RegisterType<IRequest, RequestOperations>();
+            container.RegisterType<IEmailOperations, EmailOperations>();
 
             //GlobalConfiguration.Configuration.DependencyResolver = new Unity.WebApi.UnityDependencyResolver(container);
             return container;

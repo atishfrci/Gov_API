@@ -248,6 +248,7 @@
     </Compile>
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Email\EmailController.cs" />
     <Compile Include="Controllers\Generic\GenericController.cs" />
     <Compile Include="Providers\Decryption.cs" />
     <Compile Include="Controllers\ONLINEAPP\SiteGroupController.cs" />
@@ -281,6 +282,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\" />
+    <Folder Include="Views\Email\" />
     <Folder Include="Views\Registration\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
@@ -302,6 +304,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ONLINEAPP.EMAIL.BL\ONLINEAPP.EMAIL.BL.csproj">
+      <Project>{3a32afb6-6de3-4db8-be91-c2d7bc82f5e9}</Project>
+      <Name>ONLINEAPP.EMAIL.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ONLINEAPP.EMAIL.INTERFACE\ONLINEAPP.EMAIL.INTERFACE.csproj">
+      <Project>{7DB6EE50-66DC-4B96-BFAA-A6B0843F9C2B}</Project>
+      <Name>ONLINEAPP.EMAIL.INTERFACE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ONLINEAPP.EMAIL.MODEL\ONLINEAPP.EMAIL.MODEL.csproj">
+      <Project>{757c0016-1c56-4192-8212-0ff5ac1d0cdf}</Project>
+      <Name>ONLINEAPP.EMAIL.MODEL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ONLINEAPP.GENERIC.BL\ONLINEAPP.GENERIC.BL.csproj">
       <Project>{a4ffad6f-5100-4c69-b522-77aaa2f56925}</Project>
       <Name>ONLINEAPP.GENERIC.BL</Name>
